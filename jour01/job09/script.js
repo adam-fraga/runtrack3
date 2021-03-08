@@ -16,7 +16,7 @@ function tri(numbers, order) {
                 }
             }
         }
-        console.log(numbers)
+        return numbers
     } else if (order === 'desc') {
         for (let i = 0; i < numbers.length; i++) {
             for (let j = 0; j < numbers.length; j++) {
@@ -27,5 +27,6 @@ function tri(numbers, order) {
                 }
             }
         }
-    } else return false
+        return numbers
+    }
 }
