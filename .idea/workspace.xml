@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60c90d17-a0f7-4a0f-8003-861970f2add0" name="Default Changelist" comment="" />
+    <list default="true" id="60c90d17-a0f7-4a0f-8003-861970f2add0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runtrack3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runtrack3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +48,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -67,7 +70,8 @@
       <workItem from="1615309070441" duration="385000" />
       <workItem from="1615309513907" duration="17228000" />
       <workItem from="1615366704132" duration="242000" />
-      <workItem from="1615367476520" duration="3530000" />
+      <workItem from="1615367476520" duration="5274000" />
+      <workItem from="1615373048245" duration="13758000" />
     </task>
     <servers />
   </component>
