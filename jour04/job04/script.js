@@ -9,10 +9,11 @@
 // l’ensemble des informations des utilisateurs présents dans la base de
 // données.
 document.querySelector('#button').addEventListener('click', function (e) {
-    $.post(
-        'user.php', // Le fichier cible côté serveur.
-        FetchJson, // Nous renseignons uniquement le nom de la fonction de retour.
-        'json' // Format des données reçues.
+    $.get(
+        'user.php',
+        'false',
+        FetchJson,
+        'json'
     );
     function FetchJson(data){
         console.log(data)
