@@ -74,7 +74,19 @@ UserInfos.prototype.emailValid = function (email) {
 }
 
 UserInfos.prototype.makeRequest = function () {
+    let httpRequest = new XMLHttpRequest();
+    let ready;
+    let status;
+    httpRequest.onreadystatechange = function () {
+        ready = httpRequest.readyState === XMLHttpRequest.DONE;
+        status = httpRequest.status === 200;
+    }
+    if (status && ready) {
 
+        // DO STUFF
+    } else {
+        // Display 404
+    }
 }
 
 isValid = function (e) {
