@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -8,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-<form id="form_inscription" action="#" method="post">
+<form id="form_inscription" action="verif_sub.php" method="post">
     <fieldset id="field">
         <legend>Formulaire d'inscription</legend>
         <div id="cont_nom">
@@ -32,7 +34,7 @@
         </div>
         <div>
             <label for="confirm_password">Confirmer votre mot de passe</label>
-            <input type="text" id="confirm_password" name="password" placeholder="Confirmez votre mot de passe">
+            <input type="text" id="confirm_password" name="confirm_password" placeholder="Confirmez votre mot de passe">
         </div id="cont_password">
         <div>
             <input id="button_subscribe" name="button" type="submit">

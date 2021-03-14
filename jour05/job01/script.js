@@ -14,17 +14,18 @@
  connexion. Lorsqu’il se connecte, il est renvoyé vers la page d’accueil.
 */
 
+
 /**
  *Objet UserInfos contient les infos utilisateur ainsi que les methodes de vérifications des informations posté
  * et de la requête AJAX
- * @param {string} nom string representant le nom de l'utilisateur
+ * @param {string}  nom string representant le nom de l'utilisateur
  * @param {string} prenom string représentant le prénom de l'utilisateur
  * @param {string} email string représentant l'email utilisateur
  * @param {string} password string représentant le paassword utilisateur
  * @param {string} confirm_password same
  * @constructor
  */
-let UserInfos = function (nom, prenom, email, password, confirm_password) {
+let UserInfos = function (nom = undefined, prenom = undefined, email = undefined, password = undefined, confirm_password = undefined) {
     this.nom = nom;
     this.prenom = prenom;
     this.email = email;
@@ -73,39 +74,49 @@ UserInfos.prototype.emailValid = function (email) {
     } else return true;
 }
 
-UserInfos.prototype.makeRequest = function () {
+UserInfos.prototype.makeRequest = function (Method, URL) {
     let httpRequest = new XMLHttpRequest();
-    let ready;
-    let status;
-    httpRequest.onreadystatechange = function () {
-        ready = httpRequest.readyState === XMLHttpRequest.DONE;
-        status = httpRequest.status === 200;
+    if (!XMLHttpRequest) {
+        alert("Impossible d'instancié XmlHttpRequest")
+        return false
     }
-    if (status && ready) {
+    httpRequest.onreadystatechange = request
+    httpRequest.open(Method, URL, true);
+    httpRequest.send();
 
-        // DO STUFF
-    } else {
-        // Display 404
+    function request() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200)
+                console.log(httpRequest.response)
+        }
     }
 }
 
-isValid = function (e) {
-    e.preventDefault();
+
+isSubValid = function (e) {
     let prenom = document.querySelector('#prenom');
     let nom = document.querySelector('#nom');
     let email = document.querySelector('#email');
     let password = document.querySelector('#password');
     let confirm_password = document.querySelector('#confirm_password');
     let Usr = new UserInfos(prenom.value, nom.value, email.value, password.value, confirm_password.value);
-    Usr.passMatch(Usr.password, Usr.confirm_password);
-    Usr.passComplexity(password);
-    Usr.emailValid(email);
-    //Annule le listenner sur clique pour éviter le spam
-    document.querySelector('#button_subscribe').removeEventListener('click', isValid);
+    let test = Usr.passMatch(Usr.password, Usr.confirm_password);
+    let test2 = Usr.passComplexity(password.value);
+    let test3 = Usr.emailValid(email.value);
+    if (test && test2 && test3) {
+        let request = Usr.makeRequest('POST', 'verif_sub.php')
+    } else {
+        e.preventDefault();
+        document.querySelector('#button_subscribe').removeEventListener('submit', isSubValid);
+    }
 }
-// Event sur clique
+// Event sur soumission de formulaire inscription
+document.querySelector('#button_subscribe').addEventListener('submit', isSubValid);
 
-document.querySelector('#button_subscribe').addEventListener('click', isValid)
+function isConnValid(e) {
+    let Usr = new UserInfos();
+    Usr.makeRequest('POST', 'verif_conn.php');
+}
 
-
-
+//Event sur soumission de formulaire connexion
+document.querySelector('#button_subscribe').addEventListener('submit', isConnValid);

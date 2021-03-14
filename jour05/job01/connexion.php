@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -8,19 +9,19 @@
     <title>Document</title>
 </head>
 <body>
-<form id="form_connexion" action="#" method="post">
+<form id="form_connexion" action="verif_conn.php" method="post">
     <fieldset>
         <legend>Formulaire de connexion</legend>
         <div>
-            <label for="email"></label>
+            <label for="email">Votre adresse email de connexion:</label>
             <input type="email" id="email" name="email" placeholder="Entrez votre email de connexion">
         </div>
         <div>
-            <label for=""></label>
+            <label for="password">Mot de passe:</label>
             <input type="text" id="password" name="password" placeholder="Entrez votre mot de passe">
         </div>
         <div>
-            <label for=""></label>
+            <label for="button_connexion"></label>
             <input id="button_connexion" name="button" type="submit">
         </div>
     </fieldset>

@@ -11,9 +11,9 @@ $User = new User; ?>
     <title>Document</title>
 </head>
 <body>
-<?php if (isset($_SESSION['user']['connected'])): ?>
+<?php if ($_SESSION['user']['connexion'] === true): ?>
     <article>
-        <h1>Bonjour <?= $User->getNom() ?></h1>
+        <h1>Bonjour <?= $_SESSION['user']['prenom'] ?></h1>
     </article>
 <?php else: ?>
     <article>
