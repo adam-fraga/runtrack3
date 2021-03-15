@@ -7,10 +7,6 @@ main {
     justify-content: center;
 }
 
-#header_menu {
-    display: flex;
-    justify-content: space-evenly;
-}
 #header_menu li, #header_menu a {
     list-style-type: none;
     text-decoration: none;

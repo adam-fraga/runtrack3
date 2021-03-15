@@ -8,43 +8,48 @@ let largeScreen = window.matchMedia("(min-width:1600px)");
 let mediumScreen = window.matchMedia("(min-width:768px)");
 let smallScreen = window.matchMedia("(max-width:767px)");
 
-//
+// Responsive si redimension
 function responsive(e) {
+    let main = $('main');
+    let menu = $('header_menu')
+    let section = $('.section')
     if (largeScreen.matches) {
-        console.log('LARGE')
-        $('main').css({
+        main.css({
             "display": "flex",
             "flex-direction": "row"
         })
-        $('.section').css({
+        section.css({
             "width": "23%",
             "height": "200px",
         })
     } else if (mediumScreen.matches) {
-        console.log('MEDIUM')
-        $('main').css({
+        main.css({
             "display": "flex",
             "flex-direction": "row",
             "flex-wrap": "wrap"
         })
-        $('.section').css({
+        section.css({
             "width": "45%",
             "height": "300px",
         })
-        $('ul').css("display", "block");
+        menu.css("display", "block");
 
     } else if (smallScreen.matches) {
-        console.log('SMALL')
-        $('main').css({
+        main.css({
             "display": "flex",
             "flex-direction": "column",
         })
-        $('.section').css({
+        section.css({
             "width": "90%",
             "height": "200px",
             "align-self": "center"
         })
     }
+}
+
+// Responsive au chargement de la page
+window.onload = function () {
+    responsive();
 }
 
 window.addEventListener('resize', responsive)
