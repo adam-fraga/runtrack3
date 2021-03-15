@@ -1,13 +1,18 @@
+header{
+    display: flex;
+}
 section {
     background: #88c1d0;
     margin: 10px;
 }
-
 main {
     justify-content: center;
 }
-
-#header_menu li, #header_menu a {
+#header_menu{
+    width: 70%;
+    justify-content: space-evenly;
+}
+#header_menu li, #header_menu a, #burger_menu li,#burger_menu a {
     list-style-type: none;
     text-decoration: none;
     color: black;

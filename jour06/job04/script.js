@@ -11,8 +11,9 @@ let smallScreen = window.matchMedia("(max-width:767px)");
 // Responsive si redimension
 function responsive(e) {
     let main = $('main');
-    let menu = $('header_menu')
-    let section = $('.section')
+    let menu = $('#header_menu');
+    let bg_menu = $('#burger_menu');
+    let section = $('.section');
     if (largeScreen.matches) {
         main.css({
             "display": "flex",
@@ -32,8 +33,8 @@ function responsive(e) {
             "width": "45%",
             "height": "300px",
         })
-        menu.css("display", "block");
-
+        menu.css("display", "flex");
+        bg_menu.css("display", "none");
     } else if (smallScreen.matches) {
         main.css({
             "display": "flex",
@@ -44,12 +45,18 @@ function responsive(e) {
             "height": "200px",
             "align-self": "center"
         })
+        menu.css("display", "none");
+        bg_menu.css("display", "block");
     }
+}
+
+function displayLink(e){
+$('#header_menu').css("display","block")
 }
 
 // Responsive au chargement de la page
 window.onload = function () {
     responsive();
 }
-
-window.addEventListener('resize', responsive)
+window.addEventListener('resize', responsive);
+document.querySelector('#burger_menu').addEventListener('click',displayLink);

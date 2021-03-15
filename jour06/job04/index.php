@@ -16,8 +16,11 @@
         <li class="item_menu"><a href="#">Présentation</a></li>
         <li class="item_menu"><a href="#">Contact</a></li>
     </ul>
+    <ul id="burger_menu">
+        <li><a href="#"><i class="fas fa-bars"></i></a></li>
+    </ul>
 </header>
-<main id="#main">
+<main>
     <section class="section">
 
     </section>
@@ -28,7 +31,7 @@
 
     </section>
     <section class="section">
-        
+
     </section>
 </main>
 <script
