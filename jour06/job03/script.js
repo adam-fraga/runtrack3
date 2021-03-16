@@ -1,7 +1,8 @@
 // Media queries
 let largeScreen = window.matchMedia("(min-width:1600px)");
-let mediumScreen = window.matchMedia("(min-width:760px)");
-let smallScreen = window.matchMedia("(max-width:759px)");
+let mediumScreen = window.matchMedia("(min-width:768px)");
+let smallScreen = window.matchMedia("(max-width:767px)");
+
 
 //
 function responsive(e) {
